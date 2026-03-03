@@ -3,26 +3,14 @@
  * Database connection configuration – production ready
  */
 
-// Load optional .env file for production variables (if it exists)
-if (file_exists(__DIR__ . '/.env.production')) {
-    $envLines = file(__DIR__ . '/.env.production', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($envLines as $line) {
-        if (strpos(trim($line), '#') === 0)
-            continue; // skip comments
-        $parts = explode('=', $line, 2);
-        if (count($parts) === 2) {
-            putenv(trim($parts[0]) . '=' . trim($parts[1]));
-        }
-    }
-}
+// Load environment variables
+require_once __DIR__ . '/env.php';
 
-// ------------------------------------------------------------------
-// Environment‑aware connection parameters (fallback to dev defaults)
-// ------------------------------------------------------------------
-$host = getenv('DB_HOST') ?: 'localhost';   // force TCP, works locally & prod
-$user = getenv('DB_USER') ?: 'ssc94_demohost';
-$pass = getenv('DB_PASS') ?: 'gpxaJXGRHG0EcYZbtAr@';
-$db = getenv('DB_NAME') ?: 'ssc94_fashions_db';
+// Database parameters
+$host = getenv('DB_HOST') ?: 'localhost';
+$user = getenv('DB_USER');
+$pass = getenv('DB_PASS');
+$db = getenv('DB_NAME');
 
 $dsn = "mysql:host={$host};dbname={$db};charset=utf8mb4";
 

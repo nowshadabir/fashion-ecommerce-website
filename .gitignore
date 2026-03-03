@@ -1,0 +1,6 @@
+.env
+vendor/
+uploads/
+*.php.bak
+.DS_Store
+Thumbs.db

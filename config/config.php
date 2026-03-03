@@ -3,8 +3,11 @@
  * Application Settings and Constants
  */
 
-define('SITE_URL', 'http://localhost/ecommerce-website/fashion-ecommerce/');
-define('SITE_NAME', 'Fashion Brands');
+// Load environment variables
+require_once __DIR__ . '/env.php';
+
+define('SITE_URL', getenv('SITE_URL') ?: 'http://localhost/ecommerce-website/fashion-ecommerce/');
+define('SITE_NAME', getenv('SITE_NAME') ?: 'Fashion Brands');
 define('ADMIN_PATH', SITE_URL . 'admin/');
 define('UPLOAD_PATH', 'uploads/products/');
 
