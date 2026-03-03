@@ -19,10 +19,10 @@ if (file_exists(__DIR__ . '/.env.production')) {
 // ------------------------------------------------------------------
 // Environment‑aware connection parameters (fallback to dev defaults)
 // ------------------------------------------------------------------
-$host = getenv('DB_HOST') ?: '127.0.0.1';   // force TCP, works locally & prod
-$user = getenv('DB_USER') ?: 'root';
-$pass = getenv('DB_PASS') ?: '';
-$db = getenv('DB_NAME') ?: 'fashion_db';
+$host = getenv('DB_HOST') ?: 'localhost';   // force TCP, works locally & prod
+$user = getenv('DB_USER') ?: 'ssc94_demohost';
+$pass = getenv('DB_PASS') ?: 'gpxaJXGRHG0EcYZbtAr@';
+$db = getenv('DB_NAME') ?: 'ssc94_fashions_db';
 
 $dsn = "mysql:host={$host};dbname={$db};charset=utf8mb4";
 
