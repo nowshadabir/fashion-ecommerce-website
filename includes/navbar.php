@@ -31,7 +31,8 @@
                     style="display:none; position:absolute; top:calc(100% + 12px); right:0; min-width:200px; background:#fff; box-shadow:0 8px 30px rgba(0,0,0,0.12); border:1px solid #eee; z-index:3000; border-top:3px solid var(--accent);">
                     <div style="padding:1rem 1.2rem; border-bottom:1px solid #f5f5f5;">
                         <p style="font-size:0.8rem; font-weight:700;">
-                            <?= htmlspecialchars(ucwords($_SESSION['customer_name'] ?? '')) ?></p>
+                            <?= htmlspecialchars(ucwords($_SESSION['customer_name'] ?? '')) ?>
+                        </p>
                         <p style="font-size:0.72rem; color:#aaa;"><?= htmlspecialchars($_SESSION['customer_email'] ?? '') ?>
                         </p>
                     </div>
