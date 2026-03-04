@@ -10,11 +10,11 @@
     </div>
     <nav class="nav-links" id="nav-menu">
         <a href="<?= base_url() ?>">HOME</a>
-        <a href="shop.php">SHOP</a>
-        <a href="coupons.php">COUPONS</a>
-        <a href="categories.php">CATEGORIES</a>
-        <a href="about.php">ABOUT</a>
-        <a href="contact.php">CONTACT</a>
+        <a href="<?= base_url('shop.php') ?>">SHOP</a>
+        <a href="<?= base_url('coupons.php') ?>">COUPONS</a>
+        <a href="<?= base_url('categories.php') ?>">CATEGORIES</a>
+        <a href="<?= base_url('about.php') ?>">ABOUT</a>
+        <a href="<?= base_url('contact.php') ?>">CONTACT</a>
     </nav>
     <div class="nav-icons" style="display: flex; gap: 1.5rem; align-items: center;">
         <?php if (isset($_SESSION['customer_logged_in']) && $_SESSION['customer_logged_in']): ?>
